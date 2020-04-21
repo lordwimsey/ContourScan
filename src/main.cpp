@@ -18,7 +18,7 @@ void setup() {
   Serial.println("Initialisierung abgeschlossen");        // ... Ansonsten soll die Meldung "Initialisierung abgeschlossen." ausgegeben werden.
 
 
-  Textdatei = SD.open("messung.txt", FILE_WRITE);            // An dieser Stelle wird die Textdatei erstellt. Unsere Textdatei soll "test" heißen und im Format ".txt" (Text) erstellt werden.
+  Textdatei = SD.open("messung.csv", FILE_WRITE);            // An dieser Stelle wird die Textdatei erstellt. Unsere Textdatei soll "test" heißen und im Format ".txt" (Text) erstellt werden.
 
 
   if (Textdatei) // Wenn die Textdatei ("test.txt") gefunden wurde....
@@ -49,12 +49,12 @@ void setup() {
                                                          // NUN WIRD DIE TEXTDATEI AUSGELESEN
 
 /*
-  Textdatei = SD.open("messung.txt");                            // Die Textdatei auf der SD-Karte wird wieder geoeffnet...
+  Textdatei = SD.open("messung.csv");                            // Die Textdatei auf der SD-Karte wird wieder geoeffnet...
 
   if (Textdatei)
 
 {
-  Serial.println("Checking contents of messung.txt: ");                              // ... und der Name der Datei wird ausgegeben.
+  Serial.println("Checking contents of messung.csv: ");                              // ... und der Name der Datei wird ausgegeben.
 
     while (Textdatei.available())                             // Anschließend wird die Datei so lange ausgelesen (while)...
     {
