@@ -18,21 +18,22 @@ void setup() {
   Serial.println("Initialisierung abgeschlossen");        // ... Ansonsten soll die Meldung "Initialisierung abgeschlossen." ausgegeben werden.
 
 
-  Textdatei = SD.open("messwerte.txt", FILE_WRITE);            // An dieser Stelle wird die Textdatei erstellt. Unsere Textdatei soll "test" heißen und im Format ".txt" (Text) erstellt werden.
+  Textdatei = SD.open("messung.txt", FILE_WRITE);            // An dieser Stelle wird die Textdatei erstellt. Unsere Textdatei soll "test" heißen und im Format ".txt" (Text) erstellt werden.
 
 
-  if (Textdatei)
-{                                        // Wenn die Textdatei ("test.txt") gefunden wurde....
+  if (Textdatei) // Wenn die Textdatei ("test.txt") gefunden wurde....
+{
 
     Serial.println("Schreibe in Textdatei...");           // ... soll eine Meldung im seriellen Monitor erscheinen...
-    Textdatei.println("X");
+    Textdatei.println();
+    Textdatei.print("X");
     Textdatei.print(";");
-    Textdatei.print("Y");
+    Textdatei.println("Y");
     for (int i = 0; i < 10; i++)
     {
-      Textdatei.println(i);
+      Textdatei.print(i);
       Textdatei.print(";");
-      Textdatei.print((i*i));
+      Textdatei.println((i*i));
     }
 
     Textdatei.close();                                    // Anschließend wird die Textdatei wieder geschlossen...
@@ -41,18 +42,19 @@ void setup() {
 }
   else
 {                                                        // Wenn !keine! Textdatei gefunden werden kann ...
-    Serial.println("Textdatei konnte nicht ausgelesen werden");   // ... erscheint eine Fehlermeldung im seriellen Monitor.
+  Serial.println();
+  Serial.println("Textdatei konnte nicht geschrieben werden");   // ... erscheint eine Fehlermeldung im seriellen Monitor.
 }
 
                                                          // NUN WIRD DIE TEXTDATEI AUSGELESEN
 
-
-  Textdatei = SD.open("messwerte.txt");                            // Die Textdatei auf der SD-Karte wird wieder geoeffnet...
+/*
+  Textdatei = SD.open("messung.txt");                            // Die Textdatei auf der SD-Karte wird wieder geoeffnet...
 
   if (Textdatei)
 
 {
-  Serial.println("Checking contents of messwerte.txt: ");                              // ... und der Name der Datei wird ausgegeben.
+  Serial.println("Checking contents of messung.txt: ");                              // ... und der Name der Datei wird ausgegeben.
 
     while (Textdatei.available())                             // Anschließend wird die Datei so lange ausgelesen (while)...
     {
@@ -67,7 +69,7 @@ void setup() {
     {
     Serial.println("Textdatei konnte nicht geoeffnet werden");      // ... erscheint eine Fehlermeldung im seriellen Monitor.
     }
-
+*/
 }
 
 void loop()    // Der Loop bleibt leer.
