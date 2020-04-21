@@ -25,6 +25,9 @@ void setup() {
 {                                        // Wenn die Textdatei ("test.txt") gefunden wurde....
 
     Serial.println("Schreibe in Textdatei...");           // ... soll eine Meldung im seriellen Monitor erscheinen...
+    Textdatei.println("X");
+    Textdatei.print(";");
+    Textdatei.print("Y");
     for (int i = 0; i < 10; i++)
     {
       Textdatei.println(i);
