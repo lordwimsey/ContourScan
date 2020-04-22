@@ -1,7 +1,6 @@
 #include <Arduino.h>
 
 //#include <SPI.h>
-//#include </home/peter/Nextcloud/documents/Projekte/ContourScan/Arduino/ContourScan/lib/SD-master/src/SD.h>  // In diesem Sketch verwenden wir die <SD.h> library
 #include <SD.h>
 
 File Textdatei;          // An dieser Stelle wird die Variable "Textdatei" als File (dts. Datei) deklariert.
